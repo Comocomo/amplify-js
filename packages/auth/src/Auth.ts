@@ -1058,7 +1058,7 @@ export default class AuthClass {
                         'Please make sure the Auth module is configured with a valid Cognito User Pool ID');
                 }
                 logger.debug('The user is not authenticated by the error', e);
-                throw ('not authenticated');
+                throw (e);
             }
             this.user = user;
             return this.user;
@@ -1532,7 +1532,7 @@ export default class AuthClass {
         }
 
         dispatchAuthEvent(
-            'parsingCallbackUrl', 
+            'parsingCallbackUrl',
             { url: URL },
             `The callback url is being parsed`
         );
@@ -1572,7 +1572,7 @@ export default class AuthClass {
                     logger.debug('AWS credentials', credentials);
                 }
 
-                /* 
+                /*
                 Prior to the request we do sign the custom state along with the state we set. This check will verify
                 if there is a dash indicated when setting custom state from the request. If a dash is contained
                 then there is custom state present on the state string.
@@ -1593,7 +1593,7 @@ export default class AuthClass {
                     currentUser,
                     `A user ${currentUser.getUsername()} has been signed in via Cognito Hosted UI`
                 );
-                
+
                 if (isCustomStateIncluded) {
                     const [, customState] = state.split('-');
 
