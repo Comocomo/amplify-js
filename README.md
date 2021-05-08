@@ -1,3 +1,25 @@
+this repo is used for auth package only and is based on auth version 1.6.3
+it used to get an actual error in case refresh token failed (for example by networkl error) while trying to get authenticated user.
+How to build auth and add to project:
+
+Under this repo:
+1) npm install on main folder
+2) go to Packages/auth
+3) npm install once more
+4) npm run-script build
+5) npm pack
+Under you integrated project:
+6) add the tgz file to your Project
+7) add "@aws-amplify/auth": "file: path to tgz file you've created" to your package.json under:
+  a. dependencies
+  b. resolutions
+8) add "preinstall": "npx npm-force-resolutions" to yout package.json
+9) npm install
+
+now in every sub depandcy of your app, amplify replaces "@aws-amplify/auth" with this version.
+
+copied from Amplify Repo:
+
 <img src="https://s3.amazonaws.com/aws-mobile-hub-images/aws-amplify-logo.png" alt="AWS Amplify" width="550" >
 
 <a href="https://nodei.co/npm/aws-amplify/">
