@@ -1216,7 +1216,11 @@ export default class AuthClass {
 					);
 				}
 				logger.debug('The user is not authenticated by the error', e);
-				throw 'not authenticated';
+				if (e === "No current user") {
+					throw 'not authenticated';
+				} else {
+					throw e
+				}
 			}
 			this.user = user;
 			return this.user;
@@ -1831,7 +1835,7 @@ export default class AuthClass {
 					logger.debug('AWS credentials', credentials);
 				}
 
-				/* 
+				/*
                 Prior to the request we do sign the custom state along with the state we set. This check will verify
                 if there is a dash indicated when setting custom state from the request. If a dash is contained
                 then there is custom state present on the state string.
