@@ -8,8 +8,8 @@ Under this repo:
 3) npm install once more
 4) npm run-script build
 5) npm pack
+6) merge to task/throw_actual_error branch
 Under you integrated project:
-6) add the tgz file to your Project
 7) add "@aws-amplify/auth": "file: path to tgz file you've created" to your package.json under:
   a. dependencies
   b. resolutions
