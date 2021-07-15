@@ -15,7 +15,7 @@ import AuthClass, { CognitoHostedUIIdentityProvider } from './Auth';
 import { CognitoUser, CookieStorage } from 'amazon-cognito-identity-js';
 import Amplify, { ConsoleLogger as Logger } from '@aws-amplify/core';
 
-const logger = new Logger('Auth');
+const logger = new Logger('Auth', 'VERBOSE');
 
 let _instance: AuthClass = null;
 

@@ -35,7 +35,7 @@ const dispatchAuthEvent = (event: string, data: any, message: string) => {
 	Hub.dispatch('auth', { event, data, message }, 'Auth', AMPLIFY_SYMBOL);
 };
 
-const logger = new Logger('OAuth');
+const logger = new Logger('OAuth', 'VERBOSE');
 
 export default class OAuth {
 	private _urlOpener;

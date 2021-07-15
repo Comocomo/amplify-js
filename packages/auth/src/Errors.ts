@@ -14,7 +14,7 @@
 import { AuthErrorMessages, AuthErrorTypes } from './types';
 import { ConsoleLogger as Logger } from '@aws-amplify/core';
 
-const logger = new Logger('AuthError');
+const logger = new Logger('AuthError', 'VERBOSE');
 const DEFAULT_MSG = 'Authentication Error';
 
 export class AuthError extends Error {

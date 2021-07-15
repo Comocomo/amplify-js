@@ -11,7 +11,7 @@
  * and limitations under the License.
  */
 import { ConsoleLogger as Logger } from '@aws-amplify/core';
-const logger = new Logger('urlListener');
+const logger = new Logger('urlListener', 'VERBOSE');
 
 let handler;
 

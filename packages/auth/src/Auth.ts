@@ -68,7 +68,7 @@ import { default as urlListener } from './urlListener';
 import { AuthError, NoUserPoolError } from './Errors';
 import { AuthErrorTypes } from './types/Auth';
 
-const logger = new Logger('AuthClass');
+const logger = new Logger('AuthClass', 'VERBOSE');
 const USER_ADMIN_SCOPE = 'aws.cognito.signin.user.admin';
 
 const AMPLIFY_SYMBOL = (typeof Symbol !== 'undefined' &&
