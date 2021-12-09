@@ -1899,7 +1899,6 @@ export default class AuthClass {
 					err,
 					`A failure occurred when returning state`
 				);
-				throw err;
 			}
 		}
 	}
